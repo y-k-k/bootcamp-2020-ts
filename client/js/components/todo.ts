@@ -1,8 +1,14 @@
 import store from "../store.js";
 import { updateTodoAction, removeTodoAction } from "../flux/index.js";
+import { TodoType } from "../types";
 
 class Todo {
-  constructor(parent, { id, name, done }) {
+  parent: Element;
+  element: HTMLLIElement;
+  mounted: boolean;
+  props: TodoType;
+
+  constructor(parent: Element, { id, name, done }: TodoType) {
     this.parent = parent;
     this.element = document.createElement("li");
     this.element.className = "todo-item";
@@ -12,12 +18,12 @@ class Todo {
 
   mount() {
     if (this.mounted) return;
-    const toggle = this.element.querySelector(".todo-toggle");
+    const toggle = this.element.querySelector(".todo-toggle") as HTMLInputElement;
     toggle.addEventListener("click", () => {
       this.props.done = !this.props.done;
       store.dispatch(updateTodoAction(this.props));
     });
-    const removeButton = this.element.querySelector(".todo-remove-button");
+    const removeButton = this.element.querySelector(".todo-remove-button") as HTMLButtonElement;
     removeButton.addEventListener("click", () => {
       store.dispatch(removeTodoAction(this.props));
     });
