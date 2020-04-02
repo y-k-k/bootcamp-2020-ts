@@ -1,5 +1,5 @@
 ### How to build
 
 ```sh
-$ npx tsc
+$ npx webpack --mode development
 ```
