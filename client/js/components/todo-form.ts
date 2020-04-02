@@ -1,5 +1,5 @@
-import store from "../store.js";
-import { createAddTodoAction } from "../flux/index.js";
+import store from "../store";
+import { createAddTodoAction } from "../flux/index";
 
 class TodoForm {
   button: HTMLButtonElement;

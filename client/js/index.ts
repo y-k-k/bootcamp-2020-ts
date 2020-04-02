@@ -1,7 +1,7 @@
-import { createFetchTodoListAction, clearError } from "./flux/index.js";
-import store from "./store.js";
-import TodoList from "./components/todo-list.js";
-import TodoForm from "./components/todo-form.js";
+import { createFetchTodoListAction, clearError } from "./flux/index";
+import store from "./store";
+import TodoList from "./components/todo-list";
+import TodoForm from "./components/todo-form";
 
 new TodoForm().mount();
 const parent = document.querySelector(".todo-list__wrapper");

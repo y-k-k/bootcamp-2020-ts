@@ -1,5 +1,5 @@
-import store from "../store.js";
-import { updateTodoAction, removeTodoAction } from "../flux/index.js";
+import store from "../store";
+import { updateTodoAction, removeTodoAction } from "../flux/index";
 import { TodoType } from "../types";
 
 class Todo {

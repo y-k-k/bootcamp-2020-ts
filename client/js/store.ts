@@ -1,4 +1,4 @@
-import { createStore } from "./flux/index.js";
+import { createStore } from "./flux/index";
 
 const store = createStore();
 
